@@ -1,0 +1,26 @@
+{%extends "base.html"%}
+{% block content%}
+<div class="container h5 titulo p-3  mt-2 rounded-3 border ">
+  <h5 class="text-capitalize text-light" >{{saludo}} {{user.get_username}}</h5>
+  <h5>Estos son tus flanes exclusivos</h5>
+  <h5>Si quieres ver todos nuestros productos, revisa nuestro <a href="{% url 'catalogo' %}">Catálogo</a> </h5>
+  </div>
+<div class="container p-0 mt-2">
+<div class="row">
+{% for flan in flanes%}
+  <div class="col-12 col-sm-6 col-md-3 mb-1">
+    <div class="card h-100">
+      <img src="{{flan.image_url}}" class="card-img-top"  alt="...">
+      {% if flan.is_new == True %}
+      <div class="card-img-overlay "><h5 class="d-inline-flex bg-warning text-black">¡Nuevo!</h5></div>
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">{{flan.name}}</h5>
+        <p class="card-text">{{flan.description}}</p>
+      </div>
+    </div>
+  </div>
+{%endfor%}
+</div>
+</div>
+{% endblock %}
