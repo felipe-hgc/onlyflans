@@ -8,8 +8,8 @@
 {% endif %}
 {% if user.is_authenticated %}
 <div class="container  titulo p-3 mt-2 rounded-3 border">
-  <nobr><h5 class="text-capitalize fw-bold text-light">{{user.get_username}}</h5>
-    <h5>Revisa todos nuestros productos, haciendo <a href="{% url 'catalogo' %}">click aquí</a></h5></nobr>
+  <h5 class="text-capitalize fw-bold text-light">{{user.get_username}}</h5>
+    <h5>Revisa todos nuestros productos, haciendo <a href="{% url 'catalogo' %}">click aquí</a></h5>
 </div>
 {% endif %}
 <div class="container p-0 mt-2">
