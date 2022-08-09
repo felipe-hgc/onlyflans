@@ -1,1 +1,1 @@
-web:gunicorn onlyflans.wsgi --log-file -
+web: gunicorn onlyflans.wsgi --log-file -
